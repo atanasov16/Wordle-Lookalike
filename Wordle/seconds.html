@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <p id="seconds" style="background-color: lightgreen">Преостанато време во секунди: 60</p>
+    <script>
+        var timeNow = 60
+        seconds = document.getElementById('seconds')
+        action = setInterval(time, 1000)
+        function time(){
+            console.log("yes")
+            timeNow--
+            seconds.innerHTML="Преостанато време во секунди: "+ timeNow
+            seconds.style.background = 'lightgreen'
+            if(timeNow < 10){
+                seconds.style.background = 'red'
+            }
+            if(timeNow<0){
+                seconds.innerHTML="КРАЈ"
+                clearInterval(action)
+            }
+        }
+    </script>
+</body>
+</html>
